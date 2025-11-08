@@ -72,7 +72,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Serving across India",
+      value: "Kumbakonam, Tamil Nadu, India",
       href: "#location",
     },
   ];

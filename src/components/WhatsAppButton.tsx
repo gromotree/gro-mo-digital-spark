@@ -14,14 +14,17 @@ const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 left-6 z-50 animate-fade-in"
+      className="fixed bottom-6 left-6 z-50 animate-fade-in group"
     >
-      <Button
-        size="lg"
-        className="rounded-full w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] shadow-2xl hover:scale-110 transition-transform"
-      >
-        <MessageCircle className="w-8 h-8 text-white" />
-      </Button>
+      <div className="relative">
+        <div className="absolute inset-0 bg-[#25D366] rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+        <Button
+          size="lg"
+          className="relative rounded-full w-16 h-16 bg-[#25D366] hover:bg-[#20BA5A] shadow-2xl hover:scale-110 transition-transform border-4 border-white"
+        >
+          <MessageCircle className="w-8 h-8 text-white fill-white" />
+        </Button>
+      </div>
     </a>
   );
 };
