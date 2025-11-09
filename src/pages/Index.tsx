@@ -8,10 +8,12 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Chatbot from "@/components/Chatbot";
 import FestivalPopup from "@/components/FestivalPopup";
+import Celebration from "@/components/Celebration";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Celebration />
       <Navbar />
       <main>
         <Hero />

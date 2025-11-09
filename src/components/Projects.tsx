@@ -92,6 +92,30 @@ const Projects = () => {
             </Card>
           ))}
         </div>
+
+        <div className="mt-24 max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
+            Try Our{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              AI Design Tool
+            </span>
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            Create your dream website design in seconds with our AI-powered tool
+          </p>
+          
+          <div className="relative w-full max-w-[1200px] aspect-square mx-auto rounded-xl overflow-hidden border border-border shadow-2xl animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <iframe
+              src="https://gromo-create-ai.vercel.app/"
+              title="GroMo AI Website Designer"
+              width="1200"
+              height="1200"
+              className="absolute inset-0 w-full h-full bg-background"
+              allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone; midi"
+              loading="lazy"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

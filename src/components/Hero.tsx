@@ -1,6 +1,14 @@
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// helper to smooth-scroll to sections by id
+const scrollToSection = (href: string) => {
+  const el = document.querySelector(href);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -32,11 +40,20 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white group">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white group"
+              onClick={() => scrollToSection("#contact")}
+            >
               Create My Website
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary/50 hover:bg-primary/10"
+              onClick={() => scrollToSection("#about")}
+            >
               View Pricing
             </Button>
           </div>
@@ -58,9 +75,17 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-primary rounded-full" />
-        </div>
+        <button
+          aria-label="Scroll to About"
+          onClick={() => scrollToSection("#about")}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToSection('#about'); } }}
+          className="w-8 h-12 flex items-start justify-center p-2 rounded-full bg-transparent border-0 focus:outline-none focus:ring-2 focus:ring-primary/60 transition-colors"
+        >
+          <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-2 bg-primary rounded-full" />
+          </div>
+          <span className="sr-only">Scroll to About section</span>
+        </button>
       </div>
     </section>
   );
